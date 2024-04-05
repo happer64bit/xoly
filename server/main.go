@@ -18,8 +18,8 @@ import (
 )
 
 type Registry struct {
-	Slug string `bson:"slug"`
-	URL  string `bson:"url"`
+	slug string
+	url  string
 }
 
 func main() {
@@ -69,8 +69,7 @@ func main() {
 			return err
 		}
 
-		// Redirect to the URL
-		return c.Redirect(result.URL)
+		return c.Redirect(result.url)
 	})
 
 	// Start Fiber server
